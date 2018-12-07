@@ -93,5 +93,5 @@ You can run scripts in the background as follows:
 nohup sh pcf-shutdown.sh > pcf-shutdown.log 2>&1 &
 ```
 
-All output is send to the log file.
+All output is sent to the log file.
 
