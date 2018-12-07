@@ -1,4 +1,4 @@
-# Azure hca-poc-test Footprint
+# Azure poc-test Footprint
 *Compiled by Kendall Adkins on December 7th, 2018*
 
 ## Default Marketplace Tiles
@@ -85,4 +85,13 @@ printf "\n=== START TIME: $startDate ===\n"
 printf "===   END TIME: `date` ===\n"
 ```
 
+### Running NOHUP
+
+You can run scripts in the background as follows:
+
+```
+nohup sh pcf-shutdown.sh > pcf-shutdown.log 2>&1 &
+```
+
+All output is send to the log file.
 
