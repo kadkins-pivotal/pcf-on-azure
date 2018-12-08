@@ -96,4 +96,4 @@ The tool will output a file called "azure-credentials.json" to be used when exec
 
 1. There will be a list of deployments. Click on the earliest deployment. It should be prefixed with "pivotal.pivotal-coud-foundry".
 
-1. In the left toolbar you will see a list of four menu options. Click on the "Outputs" menu option. This will show you informatino you need to access the operations manager.
+1. In the left toolbar you will see a list of four menu options. Click on the "Outputs" menu option. This will show you information you need to access the operations manager.
