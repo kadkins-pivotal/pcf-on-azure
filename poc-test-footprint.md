@@ -1,12 +1,15 @@
 # Azure poc-test Footprint
+
 *Compiled by Kendall Adkins on December 7th, 2018*
 
 ## Default Marketplace Tiles
+
 Pivotal Bosh Director for Azure  
 Small Footprint PAS
 Microsoft Azure Service Broker
 
 ## Tile Additions
+
 Pivotal Application Service for Windows  
 Spring Cloud Services  
 RabbitMQ  
@@ -15,6 +18,7 @@ MySQL for Pivotal Cloud Foundry v2
 CredHub Service Broker  
 
 ## Azure Spend Alerts
+
 |Name|Usage|Date Spend|Daily Threshold|% of Threshold|
 | --- | --- | --- | --- | --- |
 |PA-kadkins	|12/06/2018	|$91.79	   |$50.00	|183.58%|
@@ -43,7 +47,7 @@ Costs can be controlled by stopping the platform when it is not in use and resta
 
 There are several lines commented out in this script. They will delete the deployment and cleanup all orphaned data. Uncommenting these and running the script will in effect delete the entire deployment with the exception of the bosh director and the operations manager. This will signficantly reduce the cost when the platform is not in use. However, it increases the time required to spin the platform back up. Recreating the deployments is also not an option if this approach is taken. To spin the platform back up, you must enter opsman and kick off an deployment manually via the web interface. Your configuration settings from the previous deployments will be maintained by opsman.
 
-```
+```bash
 #!/bin/sh
 
 startDate=`date`
@@ -64,11 +68,14 @@ done
 #bosh -n -e pcf clean-up --all
 
 printf "\n=== START TIME: $startDate ===\n"
-printf "===   END TIME: `date` ===\n"                                        
+printf "===   END TIME: `date` ===\n"
 ```
+
 ### Recreate Deployments
+
 This script will only work if the delete deployment and clean-up are not run in the above script.
-```
+
+```bash
 #!/bin/sh
 
 startDate=`date`
@@ -89,7 +96,7 @@ printf "===   END TIME: `date` ===\n"
 
 You can run scripts in the background as follows:
 
-```
+```bash
 nohup sh pcf-shutdown.sh > pcf-shutdown.log 2>&1 &
 ```
 

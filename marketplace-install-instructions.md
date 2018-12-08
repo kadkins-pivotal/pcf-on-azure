@@ -1,29 +1,42 @@
 # Azure Marketplace install of PCF
+
 *Compiled by Kendall Adkins on December 7th, 2018*
+
 ## Find the Marketplace Install
+
 1. Open the [Azure Portal](https://portal.azure.com).
+
 1. Click on "Create a resource" in the upper left hand corner of the portal page.
+
 1. In the search bar type "pivotal cloud foundry" and hit enter.
+
 1. Click on "Pivotal Cloud Foundry on Microsoft Azure".
+
 1. You are now ready to begin preparing for the installation.
+
 ## Marketplace Install Instructions
+
 ### Prerequisites
+
 Read through the install instructions provided on Azure for the marketplace install of PCF. You should specifically follow
-the instructions provided in the "Prerequisites" section. The following subsections of this document quickly cover the critical parts of the procedures.
+the instructions provided in the "Prerequisites" section. The following subsections of this document quickly covers the critical parts of the procedures.
+
 #### Install the Azure CLI
 
-[Install Azure CLI on Windows](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-windows?view=azure-cli-latest)
+Follow these instructions: [Install Azure CLI on Windows](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-windows?view=azure-cli-latest)
 
 #### Install the Azure Powershell module on Windows
 
 1. Open power shell with "run as Administrator"
-1. Run "Install-Module -Name AzureRM -AllowClobber -Force"
-1. Enter "Y"
+1. Run the command: `Install-Module -Name AzureRM -AllowClobber -Force`
+1. Enter: `Y`
 
 #### Install Azure-Sp-Tool
-[Install azure-sp-tool](https://github.com/danhigham/azure-sp-tool)
+
+Follow these instructions: [Install azure-sp-tool](https://github.com/danhigham/azure-sp-tool)
 
 #### Run the Azure-Sp-Tool
+
 Run the following commands:
 
 `az login`
@@ -33,9 +46,10 @@ Run the following commands:
 Make sure your Azure PA subscription (account) is set as the default.
 
 Example:
-```
+
+```json
 {
-    ...     
+    ...
     "isDefault": true,
     "name": "PA-dhowser",
     ...
@@ -54,14 +68,18 @@ The tool will output a file called "azure-credentials.json" to be used when exec
 
 ### Generate a Public/Private Key Pair for SSH
 
-[How to use SSH keys with Windows on Azure ](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/ssh-from-windows)
+Here is a guide: [How to use SSH keys with Windows on Azure](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/ssh-from-windows)
 
 ### Get a Pivotal Network Token (UAA API Token)
 
 1. Goto [Pivotal Network](https://network.pivotal.io/).
+
 1. Login.
+
 1. Select "Edit Profile" in the drop down menu in the upper right hand corner by your username.
+
 1. Scroll to the botton of the page and click on UAA API TOKEN -> "Request New Refresh Token".
+
 1. Save the token in a safe place.
 
 ### Execute the Marketplace Install
@@ -82,7 +100,7 @@ The tool will output a file called "azure-credentials.json" to be used when exec
 
 1. Click "Create" to run the installation.
 
-1. Then wait a very long time...
+1. The Azure creation process will eventually finish but the operations manager will still be executing the install. You can eventually `ssh` into the operations manager to observe installation progress and view logs. You will need to follow the [Post Installation](Post Installation) instructions below in order to access the operations manager.
 
 ### Post Installation
 
