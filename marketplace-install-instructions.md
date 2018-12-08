@@ -19,7 +19,7 @@
 ### Prerequisites
 
 Read through the install instructions provided on Azure for the marketplace install of PCF. You should specifically follow
-the instructions provided in the "Prerequisites" section. The following subsections of this document quickly covers the critical parts of the procedures.
+the instructions provided in the "Prerequisites" section. The following subsections of this document quickly cover the critical parts of the procedures.
 
 #### Install the Azure CLI
 
@@ -78,7 +78,7 @@ Here is a guide: [How to use SSH keys with Windows on Azure](https://docs.micros
 
 1. Select "Edit Profile" in the drop down menu in the upper right hand corner by your username.
 
-1. Scroll to the botton of the page and click on UAA API TOKEN -> "Request New Refresh Token".
+1. Scroll to the bottom of the page and click on UAA API TOKEN -> "Request New Refresh Token".
 
 1. Save the token in a safe place.
 
@@ -88,11 +88,11 @@ Here is a guide: [How to use SSH keys with Windows on Azure](https://docs.micros
 
 1. Enter the following into the form:
 
-    SSH admin Username = ubuntu  
-    SSH public key = &lt;*Your generated public key*&gt;  
-    Service Principal = &lt;*The file you generated with the azure-sp-tool*&gt;  
-    Resource Group = &lt;*Click "Create new" and create a unique resource group for the install*&gt;  
-    Location = &lt;*Select a location close to you*&gt;
+    SSH admin Username = `ubuntu`  
+    SSH public key = `<Your generated public key>`  
+    Service Principal = `<The file you generated with the azure-sp-tool>`  
+    Resource Group = `<Click "Create new" and create a unique resource group for the install>`  
+    Location = `<Select a location close to you>`  
 
 1. Click "OK" and validation will be run on the entered form paramaters.
 
@@ -100,7 +100,7 @@ Here is a guide: [How to use SSH keys with Windows on Azure](https://docs.micros
 
 1. Click "Create" to run the installation.
 
-1. The Azure creation process will eventually finish but the operations manager will still be executing the install. You can eventually `ssh` into the operations manager to observe installation progress and view logs. You will need to follow the [Post Installation](Post Installation) instructions below in order to access the operations manager.
+1. The Azure creation process will eventually finish but the operations manager will still be executing the install. You can eventually `ssh` into the operations manager to observe installation progress and view logs. You will need to follow the "[Post Installation](#Post-Installation)" instructions below in order to access the operations manager.
 
 ### Post Installation
 

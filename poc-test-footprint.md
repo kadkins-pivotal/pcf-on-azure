@@ -41,11 +41,9 @@ Average Daily Run Rate = $102.15
 
 ## BOSH Scripts
 
-Costs can be controlled by stopping the platform when it is not in use and restarting the platform when it is needed. The following scripts are helpful. Please note that the scripts take many hours to run to you must plan ahead.
+Costs can be controlled by stopping the platform when it is not in use and restarting the platform when it is needed. The following scripts are helpful. Please note that the scripts take many hours to run so you must plan ahead.
 
 ### Hard Stop Deployments
-
-There are several lines commented out in this script. They will delete the deployment and cleanup all orphaned data. Uncommenting these and running the script will in effect delete the entire deployment with the exception of the bosh director and the operations manager. This will signficantly reduce the cost when the platform is not in use. However, it increases the time required to spin the platform back up. Recreating the deployments is also not an option if this approach is taken. To spin the platform back up, you must enter opsman and kick off an deployment manually via the web interface. Your configuration settings from the previous deployments will be maintained by opsman.
 
 ```bash
 #!/bin/sh
@@ -70,6 +68,8 @@ done
 printf "\n=== START TIME: $startDate ===\n"
 printf "===   END TIME: `date` ===\n"
 ```
+
+There are several lines commented out in this script. If uncommented, they will delete the deployment and cleanup all orphaned data. Doing so will delete the entire deployment with the exception of the bosh director and the operations manager. This will signficantly reduce the cost when the platform is not in use. However, it increases the time required to spin the platform back up. Recreating the deployments is not an option if this approach is taken. To spin the platform back up, you must enter opsman and kick off a deployment manually via the web interface. Your configuration settings from the previous deployments will be maintained by opsman.
 
 ### Recreate Deployments
 
