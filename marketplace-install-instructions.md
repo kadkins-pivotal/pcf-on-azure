@@ -84,4 +84,16 @@ The tool will output a file called "azure-credentials.json" to be used when exec
 
 1. Then wait a very long time...
 
+### Post Installation
 
+1. Open the [Azure Portal](https://portal.azure.com).
+
+1. Click on "Resource Groups".
+
+1. Click on the link for the new resource group created for the install.
+
+1. Under "Deployments" you should see a link with the number of deployments executed (e.g. "<u>2 Succeeded</u>"). Click on the link.
+
+1. There will be a list of deployments. Click on the earliest deployment. It should be prefixed with "pivotal.pivotal-coud-foundry".
+
+1. In the left toolbar you will see a list of four menu options. Click on the "Outputs" menu option. This will show you informatino you need to access the operations manager.
